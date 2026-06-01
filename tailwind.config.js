@@ -18,7 +18,7 @@ export default {
         ink: '#241811'
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
+        display: ['"Bebas Neue"', 'sans-serif'],
         sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
         body: ['Manrope', 'ui-sans-serif', 'system-ui']
       },

@@ -24,6 +24,7 @@ export function AboutPreview() {
             align="left"
             eyebrow="About Girmitiya Foundation"
             title="A trust-centered movement for memory, dignity, and development."
+            titleStyle={{ fontFamily: '"Bebas Neue", sans-serif' }}
             text="We preserve shared heritage, empower communities, and strengthen belonging." 
           />
           <div className="mt-6 grid gap-4">

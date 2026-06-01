@@ -21,6 +21,8 @@ export default function EarthModel() {
         auto-rotate
         auto-rotate-delay="0"
         camera-controls
+        disable-pan
+        disable-zoom
         shadow-intensity="0"
         exposure="1"
         interaction-prompt="none"

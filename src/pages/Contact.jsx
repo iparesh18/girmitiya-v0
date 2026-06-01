@@ -81,7 +81,7 @@ export default function Contact() {
                 return (
                   <Card key={item.title} className="p-5">
                     <Icon className="text-primary" />
-                    <h3 className="mt-3 font-bold text-primary">{item.title}</h3>
+                    <h3 className="mt-3 font-display text-2xl font-bold text-primary">{item.title}</h3>
                     <p className="mt-1 text-sm leading-6 text-earth/80">{item.value}</p>
                   </Card>
                 );

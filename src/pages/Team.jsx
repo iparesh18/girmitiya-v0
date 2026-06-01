@@ -6,7 +6,12 @@ import { images, team } from '../data/siteData';
 export default function Team() {
   return (
     <>
-      <PageHeader eyebrow="Our Team" title="People who combine research, fieldwork, and compassion." text="Our team is presented as a representative leadership structure for a modern foundation website and can be replaced with official profiles." image={images.about} />
+      <PageHeader
+        eyebrow="Our Team"
+        title="People who combine research, fieldwork, and compassion."
+        text="Our team is presented as a representative leadership structure for a modern foundation website and can be replaced with official profiles."
+        image={images.about}
+      />
       <section className="py-20">
         <div className="container-pad">
           <SectionHeading eyebrow="Leadership" title="Guided by service and cultural responsibility." />

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function PageHeader({ eyebrow, title, text, image }) {
+export default function PageHeader({ eyebrow, title, text, image, eyebrowClassName = 'bg-saffron text-light' }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-32 sm:pt-36">
       <div className="absolute inset-0 pattern-band" />
@@ -19,7 +19,7 @@ export default function PageHeader({ eyebrow, title, text, image }) {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="rounded-full bg-darker/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-primary">
+          <span className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] ${eyebrowClassName}`}>
             {eyebrow}
           </span>
           <h1 className="mt-6 text-balance font-display text-[clamp(3rem,6vw,4.5rem)] font-bold leading-[1.04] text-primary">

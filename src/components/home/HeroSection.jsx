@@ -17,7 +17,7 @@ export default function HeroSection() {
             <div className="order-2 mt-6 lg:order-1 lg:mt-0">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing }}>
                 <p className="mb-6 text-xs font-semibold tracking-widest text-earth/60">GLOBAL CULTURAL FOUNDATION</p>
-                <h2 className="font-display text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-ink">Girmitiya.</h2>
+                <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-ink" style={{ fontFamily: '"Bebas Neue", sans-serif' }}>Girmitiya.</h2>
                 <p className="mt-4 max-w-[420px] text-[16px] leading-7 text-earth/80">Connecting history with the future.</p>
                 <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: easing }} className="mt-6 max-w-[420px] text-[15px] leading-7 text-earth/76">
                   Preserving cultural heritage, supporting communities, and creating lasting impact across generations.
@@ -33,7 +33,7 @@ export default function HeroSection() {
 
             {/* Right column - EarthModel */}
             <div className="order-1 lg:order-2 flex items-center justify-center">
-              <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.15, duration: 1.1, ease: easing }} className="relative flex h-[78vh] w-[78vh] max-w-[60vw] items-center justify-center">
+              <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.15, duration: 1.1, ease: easing }} className="relative flex h-[72vh] w-[72vh] max-w-[54vw] translate-y-10 items-center justify-center lg:translate-y-16">
                 <div className="absolute -right-8 -left-8 top-0 bottom-0 -z-10 rounded-full bg-[radial-gradient(circle_at_center,_rgba(212,160,23,0.08),transparent_40%)]" />
                 <div className="relative z-10 h-full w-full">
                   <div className="h-full w-full">

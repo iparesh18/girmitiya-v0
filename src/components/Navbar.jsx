@@ -89,13 +89,11 @@ export default function Navbar() {
       </a>
       <nav className="glass mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-3 shadow-premium">
         <Link to="/" className="flex items-center gap-3" aria-label="Girmitiya Foundation home">
-          <span className="grid h-11 w-11 place-items-center rounded-full bg-primary text-dark shadow-glow">
-            <Heart size={21} fill="currentColor" />
-          </span>
-          <span>
-            <span className="block font-display text-lg font-bold leading-none text-primary">Girmitiya</span>
-            <span className="text-xs font-bold uppercase tracking-[0.22em] text-earth/60">Foundation</span>
-          </span>
+          <img
+            src="/girmititya.png"
+            alt="Girmitiya Foundation"
+            className="h-14 w-auto max-w-[190px] object-contain"
+          />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">

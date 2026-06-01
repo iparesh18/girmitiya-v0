@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="font-bold text-light">Explore</h3>
+            <h3 className="font-display text-2xl font-bold text-light">Explore</h3>
             <div className="mt-5 grid gap-3">
               {links.map(([label, path]) => (
                 <Link key={path} to={path} className="text-light/72 transition hover:text-gold">
@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="font-bold text-light">Contact</h3>
+            <h3 className="font-display text-2xl font-bold text-light">Contact</h3>
             <div className="mt-5 grid gap-4 text-sm text-light/72">
               <span className="flex gap-3"><MapPin size={18} className="text-primary" /> New Delhi, India</span>
               <span className="flex gap-3"><Phone size={18} className="text-primary" /> +91 98765 43210</span>
