@@ -19,6 +19,7 @@ export default {
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
         body: ['Manrope', 'ui-sans-serif', 'system-ui']
       },

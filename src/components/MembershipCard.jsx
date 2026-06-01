@@ -1,6 +1,7 @@
 import { CheckCircle2 } from 'lucide-react';
 import Card from './common/Card';
 import Button from './common/Button';
+import Reveal from './common/Reveal';
 
 export default function MembershipCard({ id, title, price, description, benefits, highlighted }) {
   return (
@@ -10,9 +11,13 @@ export default function MembershipCard({ id, title, price, description, benefits
           Popular
         </span>
       )}
-      <h3 className={`font-display text-3xl font-bold ${highlighted ? 'text-light' : 'text-primary'}`}>{title}</h3>
+      <Reveal as="h3" className={`font-display text-3xl font-bold text-balance ${highlighted ? 'text-light' : 'text-primary'}`}>
+        {title}
+      </Reveal>
       <p className={`mt-3 leading-7 ${highlighted ? 'text-light/80' : 'text-earth/80'}`}>{description}</p>
-      <p className={`mt-6 font-display text-5xl font-bold ${highlighted ? 'text-saffron' : 'text-primary'}`}>{price}</p>
+      <Reveal as="p" className={`mt-6 font-display text-5xl font-bold text-balance ${highlighted ? 'text-saffron' : 'text-primary'}`} delay={0.05}>
+        {price}
+      </Reveal>
       <ul className="mt-7 grid gap-3">
         {benefits.map((benefit) => (
           <li key={benefit} className={`flex gap-3 ${highlighted ? 'text-light/90' : 'text-earth/80'}`}>

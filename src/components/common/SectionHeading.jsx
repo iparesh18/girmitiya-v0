@@ -1,4 +1,5 @@
 import AnimatedContainer from './AnimatedContainer';
+import Reveal from './Reveal';
 
 export default function SectionHeading({ eyebrow, title, text, align = 'center', titleClassName = '', titleStyle }) {
   const alignment = align === 'left' ? 'text-left items-start' : 'text-center items-center mx-auto';
@@ -9,12 +10,13 @@ export default function SectionHeading({ eyebrow, title, text, align = 'center',
           {eyebrow}
         </span>
       )}
-      <h2
+      <Reveal
+        as="h2"
         className={`text-balance font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.08] text-primary ${titleClassName}`}
         style={titleStyle}
       >
         {title}
-      </h2>
+      </Reveal>
       {text && <p className="mt-4 max-w-2xl text-[18px] leading-[1.8] text-earth/80">{text}</p>}
     </AnimatedContainer>
   );

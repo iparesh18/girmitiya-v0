@@ -9,6 +9,7 @@ import Button from '../common/Button';
 import Card from '../common/Card';
 import FlowingMenu from '../common/FlowingMenu';
 import SectionHeading from '../common/SectionHeading';
+import Reveal from '../common/Reveal';
 import PartnerMarquee from './PartnerMarquee';
 import { activities, blogs, images, values, workAreas } from '../../data/siteData';
 
@@ -64,7 +65,9 @@ export function MissionVision() {
           ].map(([title, text]) => (
             <Card key={title}>
               <Sprout className="text-primary" size={34} />
-              <h3 className="mt-5 font-display text-3xl font-bold text-primary">{title}</h3>
+              <Reveal as="h3" className="mt-5 font-display text-3xl font-bold text-primary">
+                {title}
+              </Reveal>
               <p className="mt-4 leading-8 text-earth/80">{text}</p>
             </Card>
           ))}
@@ -88,7 +91,9 @@ export function WorkAreas() {
                   <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary">
                     <Icon />
                   </div>
-                  <h3 className="mt-4 font-display text-xl font-bold text-primary">{item.title}</h3>
+                  <Reveal as="h3" className="mt-4 font-display text-xl font-bold text-primary">
+                    {item.title}
+                  </Reveal>
                   <p className="mt-2 text-sm leading-6 text-earth/80">{item.text}</p>
                   <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                     Explore More <ArrowRight size={14} />
@@ -110,7 +115,9 @@ export function RootReconnect() {
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="p-8 sm:p-12">
             <span className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">Our Stories</span>
-            <h2 className="mt-4 font-display text-4xl font-bold sm:text-5xl">Find names, places, stories, and the quiet threads between them.</h2>
+            <Reveal as="h2" className="mt-4 font-display text-4xl font-bold sm:text-5xl">
+              Find names, places, stories, and the quiet threads between them.
+            </Reveal>
             <p className="mt-5 leading-8 text-light/80">Every family has a journey. Discover the connections.</p>
             <Button to="/root-search" className="mt-8 bg-saffron" icon={ArrowRight}>Start Exploring</Button>
           </div>
@@ -149,7 +156,9 @@ export function ProgramHighlights() {
             <Card key={title} className="overflow-hidden p-0">
               <img src={image} alt={title} loading="lazy" className="h-64 w-full object-cover" />
               <div className="p-6">
-                <h3 className="font-display text-2xl font-bold text-primary">{title}</h3>
+                <Reveal as="h3" className="font-display text-2xl font-bold text-primary">
+                  {title}
+                </Reveal>
                 <p className="mt-3 leading-7 text-earth/80">{text}</p>
                 <Button to={path} variant="ghost" className="mt-5">View Program</Button>
               </div>
@@ -246,7 +255,9 @@ export function GalleryPartnersCta() {
           <div className="rounded-[2.2rem] bg-gradient-to-r from-maroon to-earth p-8 text-light shadow-premium sm:p-12 lg:flex lg:items-center lg:justify-between">
             <div>
               <HandHeart className="text-saffron" size={42} />
-              <h2 className="mt-4 font-display text-4xl font-bold">Your support can turn memory into momentum.</h2>
+              <Reveal as="h2" className="mt-4 font-display text-4xl font-bold">
+                Your support can turn memory into momentum.
+              </Reveal>
               <p className="mt-3 max-w-2xl leading-8 text-light/76">Donate, volunteer, sponsor a program, or help a family begin the root search journey.</p>
             </div>
             <Button to="/contact"  className="mt-7 lg:mt-0 bg-saffron">Donate Now</Button>

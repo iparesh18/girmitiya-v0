@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion';
 import Button from '../common/Button';
 import EarthModel from './EarthModel';
+import ImageSlider from './ImageSlider';
 
 const easing = [0.2, 0.15, 0.08, 0.3];
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen w-full bg-[#FFFBF2]">
+    <section className="relative isolate h-screen w-full overflow-hidden">
+      {/* Image Slider Background */}
+      <div className="absolute inset-0 -z-20">
+        <ImageSlider />
+      </div>
+
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_right,_rgba(212,160,23,0.06),transparent_18%),radial-gradient(ellipse_at_center,_rgba(0,0,0,0.02),transparent_60%)]" />
 
       <div className="container-pad h-full flex items-center">
@@ -16,11 +22,14 @@ export default function HeroSection() {
             {/* Left column - minimal content */}
             <div className="order-2 mt-6 lg:order-1 lg:mt-0">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing }}>
-                <p className="mb-6 text-xs font-semibold tracking-widest text-earth/60">GLOBAL CULTURAL FOUNDATION</p>
-                <h2 className="text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-ink" style={{ fontFamily: '"Bebas Neue", sans-serif' }}>Girmitiya.</h2>
-                <p className="mt-4 max-w-[420px] text-[16px] leading-7 text-earth/80">Connecting history with the future.</p>
-                <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: easing }} className="mt-6 max-w-[420px] text-[15px] leading-7 text-earth/76">
-                  Preserving cultural heritage, supporting communities, and creating lasting impact across generations.
+
+                <h2 className="leading-[1.05]">
+                  <span className="block font-display font-bold text-[clamp(3rem,7vw,6rem)] text-white leading-none tracking-widest">GERMITIYA</span>
+                  <span className="block text-[clamp(1.2rem,2.8vw,2.2rem)] text-[#D4A017] mt-2 leading-snug" style={{ fontFamily: "'Oooh Baby', cursive" }}>Where Heritage Lives On</span>
+                </h2>
+
+                <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: easing }} className="mt-6 max-w-[400px] text-[15px] leading-7 text-white/70">
+                  Connecting diaspora communities through culture, education, and lasting advocacy.
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8, ease: easing }} className="mt-8 flex gap-3">
@@ -46,7 +55,7 @@ export default function HeroSection() {
           </div>
 
           {/* Bottom micro text */}
-          <div className="pointer-events-none absolute left-0 bottom-6 w-full text-sm text-earth/60">
+          <div className="pointer-events-none absolute left-0 bottom-6 w-full text-sm text-white/60">
             <div className="container-pad flex items-center justify-between">
               <span className="text-xs">Since 2016</span>
               <span className="text-xs">Heritage • Community • Impact</span>
