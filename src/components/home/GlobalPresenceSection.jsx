@@ -27,8 +27,8 @@ export default function GlobalPresenceSection() {
       <div className="container-pad">
         <SectionHeading
           eyebrow="Where Our Roots Spread"
-          title="Connecting descendants, preserving heritage, and celebrating cultural identity across continents."
-          text="Our presence spans families, archives, and communities shaped by the Girmit diaspora." 
+          title="Connecting descendants and preserving cultural identity worldwide."
+          text="Our presence spans families and archives across continents." 
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.25fr_0.75fr]">

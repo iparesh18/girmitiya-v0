@@ -24,7 +24,7 @@ export function AboutPreview() {
             align="left"
             eyebrow="About Girmitiya Foundation"
             title="A trust-centered movement for memory, dignity, and development."
-            text="We bring together descendants, educators, volunteers, and researchers to preserve shared heritage, empower communities, and build a future rooted in identity and unity."
+            text="We preserve shared heritage, empower communities, and strengthen belonging." 
           />
           <div className="mt-6 grid gap-4">
             <div className="grid gap-3 rounded-2xl border border-primary/10 bg-white/70 p-4 shadow-[0_16px_40px_rgba(95,59,36,0.08)]">
@@ -77,7 +77,7 @@ export function WorkAreas() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="What We Do" title="Programs shaped around real community needs." text="Each initiative connects practical development with the emotional strength of cultural belonging." />
+        <SectionHeading eyebrow="What We Do" title="Programs shaped around real community needs." text="Practical programs rooted in cultural belonging." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {workAreas.map((item) => {
             const Icon = item.icon;
@@ -110,8 +110,8 @@ export function RootReconnect() {
           <div className="p-8 sm:p-12">
             <span className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">Our Stories</span>
             <h2 className="mt-4 font-display text-4xl font-bold sm:text-5xl">Find names, places, stories, and the quiet threads between them.</h2>
-            <p className="mt-5 leading-8 text-light/80">Every family has a journey. Discover the connections that bind us across generations.</p>
-            <Button to="/root-search" variant="secondary" className="mt-8" icon={ArrowRight}>Start Exploring</Button>
+            <p className="mt-5 leading-8 text-light/80">Every family has a journey. Discover the connections.</p>
+            <Button to="/root-search" className="mt-8 bg-saffron" icon={ArrowRight}>Start Exploring</Button>
           </div>
           <img src={images.roots} alt="Old records and heritage" loading="lazy" className="h-full min-h-80 w-full object-cover" />
         </div>
@@ -164,7 +164,7 @@ export function Testimonials() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="Community Voices" title="Community stories carry the heart of the foundation." />
+        <SectionHeading eyebrow="Community Voices" title="Community stories carry the heart of the foundation." text="" />
         <TestimonialSlider />
       </div>
     </section>
@@ -175,7 +175,7 @@ export function BlogPreview() {
   return (
     <section className="py-20">
       <div className="container-pad">
-        <SectionHeading eyebrow="Ideas & Reflections" title="Ideas, field notes, and heritage reflections." />
+        <SectionHeading eyebrow="Ideas & Reflections" title="Ideas, field notes, and heritage reflections." text="" />
         <div className="grid gap-6 lg:grid-cols-3">
           {blogs.slice(0, 3).map((post) => <BlogCard key={post.title} post={post} />)}
         </div>
@@ -198,8 +198,8 @@ export function FlowingMenuShowcase() {
       <div className="container-pad">
         <SectionHeading
           eyebrow="Heritage Pathways"
-          title="Explore the living map of programs, archives, and community memory."
-          text="Hover each pathway to see how Girmitiya heritage travels through stories, education, and cultural preservation."
+          title="Explore the living map of programs and archives."
+          text=""
         />
         <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-primary/20 shadow-premium">
           <FlowingMenu
@@ -222,7 +222,7 @@ export function GalleryPartnersCta() {
     <>
       <section className="py-20">
         <div className="container-pad">
-          <SectionHeading eyebrow="Moments That Matter" title="Moments from the field, the archive, and the community." />
+          <SectionHeading eyebrow="Moments That Matter" title="Moments from the field and the community." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[images.about, images.women, images.skill, images.child].map((image, index) => (
               <img key={image} src={image} alt={`Foundation gallery ${index + 1}`} loading="lazy" className="h-72 w-full rounded-[1.5rem] object-cover shadow-premium transition duration-700 hover:scale-[1.03]" />
@@ -248,7 +248,7 @@ export function GalleryPartnersCta() {
               <h2 className="mt-4 font-display text-4xl font-bold">Your support can turn memory into momentum.</h2>
               <p className="mt-3 max-w-2xl leading-8 text-light/76">Donate, volunteer, sponsor a program, or help a family begin the root search journey.</p>
             </div>
-            <Button to="/contact" variant="secondary" className="mt-7 lg:mt-0">Donate Now</Button>
+            <Button to="/contact"  className="mt-7 lg:mt-0 bg-saffron">Donate Now</Button>
           </div>
         </div>
       </section>

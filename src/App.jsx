@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Loader from './components/common/Loader';
 import MainLayout from './layouts/MainLayout';
 import { pageMotion } from './animations/variants';
 import About from './pages/About';
@@ -29,7 +28,6 @@ export default function App() {
 
   return (
     <>
-      <Loader />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route element={<MainLayout />}>

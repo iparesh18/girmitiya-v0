@@ -27,7 +27,7 @@ export default function Blog() {
           <article className="mb-10 grid overflow-hidden rounded-[2rem] bg-primary text-light shadow-premium lg:grid-cols-2">
             <img src={blogs[0].image} alt={blogs[0].title} className="h-full min-h-80 w-full object-cover" />
             <div className="p-8 sm:p-10">
-              <span className="text-xs font-bold uppercase tracking-[0.24em] text-saffron font-bold">Featured Article</span>
+              <span className="text-xs font-bold uppercase tracking-[0.24em] text-saffron">Featured Article</span>
               <h2 className="mt-4 font-display text-4xl font-bold">{blogs[0].title}</h2>
               <p className="mt-4 leading-8 text-light/76">{blogs[0].excerpt}</p>
               <Button to="/blog" variant="secondary" className="mt-7">Read Article</Button>

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Heart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
@@ -81,7 +81,6 @@ function NavItem({ item, mobile = false, onNavigate }) {
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
@@ -117,10 +116,6 @@ export default function Navbar() {
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </nav>
-
-      <motion.div aria-hidden="true" className="mx-auto mt-2 h-1 max-w-[calc(100%-1.5rem)] overflow-hidden rounded-full bg-dark/10">
-        <motion.span className="block h-full origin-left rounded-full bg-gradient-to-r from-primary via-saffron to-gold" style={{ scaleX: scrollYProgress }} />
-      </motion.div>
 
       <AnimatePresence>
         {mobileOpen && (

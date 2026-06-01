@@ -18,9 +18,9 @@ export default {
         ink: '#241811'
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'Playfair Display', 'serif'],
-        sans: ['Source Sans 3', 'Inter', 'ui-sans-serif', 'system-ui'],
-        body: ['Source Sans 3', 'Inter', 'ui-sans-serif', 'system-ui']
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Manrope', 'ui-sans-serif', 'system-ui'],
+        body: ['Manrope', 'ui-sans-serif', 'system-ui']
       },
       boxShadow: {
         premium: '0 24px 70px rgba(95, 59, 36, 0.16)',

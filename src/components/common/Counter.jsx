@@ -1,4 +1,4 @@
-import { motion, useSpring, useTransform } from 'motion/react';
+import { motion, useSpring, useTransform } from 'framer-motion';
 import { useEffect } from 'react';
 
 import './Counter.css';

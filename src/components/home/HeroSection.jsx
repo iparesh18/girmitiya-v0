@@ -1,64 +1,59 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, MapPin, Star, Users } from 'lucide-react';
 import Button from '../common/Button';
-import { heroImage } from '../../data/siteData';
+import EarthModel from './EarthModel';
+
+const easing = [0.2, 0.15, 0.08, 0.3];
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden pt-28">
-      <div className="absolute inset-0">
-        <img src={heroImage} alt="Community gathering" className="h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-ink/82 via-maroon/58 to-saffron/28" />
-        <div className="absolute inset-0 bg-cultural-pattern bg-[length:28px_28px] opacity-30" />
-      </div>
-      <motion.div
-        animate={{ y: [0, -18, 0], rotate: [0, 2, 0] }}
-        transition={{ repeat: Infinity, duration: 7, ease: 'easeInOut' }}
-        className="absolute right-10 top-36 hidden h-28 w-28 rounded-full border border-primary/30 bg-dark/12 backdrop-blur lg:block"
-      />
-      <div className="container-pad relative grid min-h-[calc(100vh-7rem)] items-center gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <motion.div initial={{ opacity: 0, y: 34 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75 }}>
-          <span className="rounded-full border border-saffron/30 bg-dark/40 px-4 py-2 text-xs font-bold uppercase tracking-[0.28em] text-saffron backdrop-blur">
-            Rooted in heritage, united by purpose.
-          </span>
-          <h1 className="mt-7 max-w-4xl text-balance font-display text-[clamp(3.2rem,6vw,4.8rem)] font-bold leading-[1.02] text-light">
-            Reconnect with your <span className="text-saffron">roots.</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-[18px] leading-[1.8] text-light/88">
-            Uniting Girmitiya descendants across generations through culture, genealogy, education, and community action.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button to="/root-search" className="bg-maroon hover:bg-earth" icon={ArrowRight}>Explore Our Heritage</Button>
-            <Button to="/membership" variant="ghost" className="border border-light/40 text-light hover:bg-light hover:text-maroon">Become a Member</Button>
-          </div>
-        </motion.div>
+    <section className="relative h-screen w-full bg-[#FFFBF2]">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_right,_rgba(212,160,23,0.06),transparent_18%),radial-gradient(ellipse_at_center,_rgba(0,0,0,0.02),transparent_60%)]" />
 
-        <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25, duration: 0.7 }} className="lg:justify-self-end">
-          <div className="glass max-w-md rounded-[2rem] border border-white/20 bg-dark/60 p-6 text-light shadow-premium">
-            <p className="font-display text-2xl font-bold text-light">A living bridge to ancestry.</p>
-            <div className="mt-5 grid gap-4 text-sm">
-              {[
-                { label: 'Members Worldwide', value: '4200+', icon: Users },
-                { label: 'Families Connected', value: '1850+', icon: MapPin },
-                { label: 'Projects Completed', value: '180+', icon: Star },
-                { label: 'Years of Impact', value: '12', icon: Calendar }
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      <span className="grid h-9 w-9 place-items-center rounded-full bg-saffron/20 text-saffron">
-                        <Icon size={18} />
-                      </span>
-                      <span className="text-light/80">{item.label}</span>
-                    </div>
-                    <span className="font-display text-lg font-bold text-light">{item.value}</span>
+      <div className="container-pad h-full flex items-center">
+        <div className="mx-auto w-full max-w-[1200px]">
+          <div className="grid h-full grid-cols-1 items-center gap-8 lg:grid-cols-2">
+
+            {/* Left column - minimal content */}
+            <div className="order-2 mt-6 lg:order-1 lg:mt-0">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: easing }}>
+                <p className="mb-6 text-xs font-semibold tracking-widest text-earth/60">GLOBAL CULTURAL FOUNDATION</p>
+                <h2 className="font-display text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-ink">Girmitiya.</h2>
+                <p className="mt-4 max-w-[420px] text-[16px] leading-7 text-earth/80">Connecting history with the future.</p>
+                <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: easing }} className="mt-6 max-w-[420px] text-[15px] leading-7 text-earth/76">
+                  Preserving cultural heritage, supporting communities, and creating lasting impact across generations.
+                </motion.p>
+
+                <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8, ease: easing }} className="mt-8 flex gap-3">
+                  <Button to="/work" className="rounded-full border border-[#D4A017] bg-earth px-5 py-3 text-sm font-semibold text-ink hover:bg-[#FFF7E6] transition">Explore Our Work</Button>
+                  <Button to="/membership" className="rounded-full border border-neutral-200 bg-[#D4A017] px-5 py-3 text-sm font-semibold text-ink hover:bg-neutral-50 transition">Become a Member</Button>
+                </motion.div>
+
+              </motion.div>
+            </div>
+
+            {/* Right column - EarthModel */}
+            <div className="order-1 lg:order-2 flex items-center justify-center">
+              <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.15, duration: 1.1, ease: easing }} className="relative flex h-[78vh] w-[78vh] max-w-[60vw] items-center justify-center">
+                <div className="absolute -right-8 -left-8 top-0 bottom-0 -z-10 rounded-full bg-[radial-gradient(circle_at_center,_rgba(212,160,23,0.08),transparent_40%)]" />
+                <div className="relative z-10 h-full w-full">
+                  <div className="h-full w-full">
+                    <EarthModel />
                   </div>
-                );
-              })}
+                </div>
+              </motion.div>
+            </div>
+
+          </div>
+
+          {/* Bottom micro text */}
+          <div className="pointer-events-none absolute left-0 bottom-6 w-full text-sm text-earth/60">
+            <div className="container-pad flex items-center justify-between">
+              <span className="text-xs">Since 2016</span>
+              <span className="text-xs">Heritage • Community • Impact</span>
             </div>
           </div>
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );

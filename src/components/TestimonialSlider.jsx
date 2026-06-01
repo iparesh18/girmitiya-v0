@@ -20,7 +20,7 @@ export default function TestimonialSlider() {
         <SwiperSlide key={item.name}>
           <article className="h-full rounded-[1.4rem] border border-primary/20 bg-darker/90 p-6 shadow-premium transition hover:border-primary/30">
             <Quote className="text-saffron" />
-            <p className="mt-4 text-sm leading-6 text-light/82">“{item.quote}”</p>
+            <p className="mt-4 text-sm leading-6 text-white">“{item.quote}”</p>
             <div className="mt-6">
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-light/55">Community Voice</p>
               <p className="mt-2 font-semibold text-light">{item.name}</p>
