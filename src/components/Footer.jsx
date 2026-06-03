@@ -99,7 +99,7 @@ export default function Footer() {
       {/* Giant brand type */}
       <div className="relative z-10 container-pad pt-10 pb-6 select-none">
         <h2
-          className="font-display leading-[0.85] tracking-tight whitespace-nowrap"
+          className="font-display leading-[0.85] tracking-tight whitespace-normal sm:whitespace-nowrap"
           style={{ fontSize: 'clamp(2rem, 6.8vw, 7rem)' }}
         >
           <span className="text-light">GIRMITIYA </span>

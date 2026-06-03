@@ -133,7 +133,7 @@ export function FeaturedActivities() {
     <section className="py-20">
       <div className="container-pad">
         <SectionHeading eyebrow="Featured Activities" title="Action that feels human, grounded, and measurable." />
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {activities.map((item) => <ActivityCard key={item.title} item={item} />)}
         </div>
       </div>
@@ -151,7 +151,7 @@ export function ProgramHighlights() {
     <section className="pattern-band py-20">
       <div className="container-pad">
         <SectionHeading eyebrow="Program Highlights" title="Development programs with warmth and structure." />
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map(([title, image, path, text]) => (
             <Card key={title} className="overflow-hidden p-0">
               <img src={image} alt={title} loading="lazy" className="h-64 w-full object-cover" />
@@ -186,7 +186,7 @@ export function BlogPreview() {
     <section className="py-20">
       <div className="container-pad">
         <SectionHeading eyebrow="Ideas & Reflections" title="Ideas, field notes, and heritage reflections." text="" />
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blogs.slice(0, 3).map((post) => <BlogCard key={post.title} post={post} />)}
         </div>
       </div>
@@ -211,7 +211,7 @@ export function FlowingMenuShowcase() {
           title="Explore the living map of programs and archives."
           text=""
         />
-        <div className="relative h-[420px] overflow-hidden rounded-[2rem] border border-primary/20 shadow-premium">
+        <div className="relative h-[320px] overflow-hidden rounded-[2rem] border border-primary/20 shadow-premium sm:h-[380px] lg:h-[420px]">
           <FlowingMenu
             items={items}
             speed={18}
@@ -255,7 +255,7 @@ export function GalleryPartnersCta() {
           <div className="rounded-[2.2rem] bg-gradient-to-r from-maroon to-earth p-8 text-light shadow-premium sm:p-12 lg:flex lg:items-center lg:justify-between">
             <div>
               <HandHeart className="text-saffron" size={42} />
-              <Reveal as="h2" className="mt-4 font-display text-4xl font-bold">
+              <Reveal as="h2" className="mt-4 font-display font-bold" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
                 Your support can turn memory into momentum.
               </Reveal>
               <p className="mt-3 max-w-2xl leading-8 text-light/76">Donate, volunteer, sponsor a program, or help a family begin the root search journey.</p>

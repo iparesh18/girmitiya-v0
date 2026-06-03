@@ -69,7 +69,7 @@ export default function Activity() {
               <div className="overflow-hidden">
                 <motion.h1
                   variants={rise}
-                  className="font-display leading-[0.84] tracking-tight whitespace-nowrap select-none"
+                  className="font-display leading-[0.84] tracking-tight whitespace-normal select-none sm:whitespace-nowrap"
                   style={{ fontSize: 'clamp(2.5rem, 9.5vw, 9rem)' }}
                 >
                   <span className="text-light">ACTIVE </span>
@@ -103,7 +103,7 @@ export default function Activity() {
       {/* ── Stats strip — warm parchment ─────────────── */}
       <section className="bg-parchment border-y border-primary/12">
         <div className="container-pad py-10">
-          <div className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:grid-cols-4">
             {STATS.map(({ label, value }, i) => (
               <motion.div
                 key={label}
@@ -111,7 +111,7 @@ export default function Activity() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
-                className="border-r border-primary/12 px-6 first:pl-0 last:border-none"
+                className="border-primary/12 lg:border-r lg:px-6 lg:first:pl-0 lg:last:border-none"
               >
                 <p
                   className="font-display leading-none text-primary"

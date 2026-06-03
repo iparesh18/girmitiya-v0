@@ -102,13 +102,8 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
     };
   }, [text, image, repetitions, speed]);
 
-  const handleMouseEnter = (ev) => {
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
-    const rect = itemRef.current.getBoundingClientRect();
-    const x = ev.clientX - rect.left;
-    const y = ev.clientY - rect.top;
-    const edge = findClosestEdge(x, y, rect.width, rect.height);
-
+  const showMarquee = (edge) => {
+    if (!marqueeRef.current || !marqueeInnerRef.current) return;
     gsap
       .timeline({ defaults: animationDefaults })
       .set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
@@ -116,17 +111,37 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
       .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
   };
 
-  const handleMouseLeave = (ev) => {
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
-    const rect = itemRef.current.getBoundingClientRect();
-    const x = ev.clientX - rect.left;
-    const y = ev.clientY - rect.top;
-    const edge = findClosestEdge(x, y, rect.width, rect.height);
-
+  const hideMarquee = (edge) => {
+    if (!marqueeRef.current || !marqueeInnerRef.current) return;
     gsap
       .timeline({ defaults: animationDefaults })
       .to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
       .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+  };
+
+  const handleMouseEnter = (ev) => {
+    if (!itemRef.current) return;
+    const rect = itemRef.current.getBoundingClientRect();
+    showMarquee(findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height));
+  };
+
+  const handleMouseLeave = (ev) => {
+    if (!itemRef.current) return;
+    const rect = itemRef.current.getBoundingClientRect();
+    hideMarquee(findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height));
+  };
+
+  // touch: tap once to reveal marquee, tap again (or the link) to navigate
+  const touchActive = useRef(false);
+  const handleTouchStart = (ev) => {
+    if (!touchActive.current) {
+      ev.preventDefault();
+      touchActive.current = true;
+      showMarquee('top');
+    } else {
+      touchActive.current = false;
+      hideMarquee('bottom');
+    }
   };
 
   return (
@@ -136,6 +151,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
         style={{ color: textColor }}
       >
         {text}

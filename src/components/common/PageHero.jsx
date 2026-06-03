@@ -59,7 +59,7 @@ export default function PageHero({
             <div className="overflow-hidden">
               <motion.h1
                 variants={rise}
-                className="font-display leading-[0.84] tracking-tight whitespace-nowrap select-none"
+                className="font-display leading-[0.84] tracking-tight whitespace-normal select-none sm:whitespace-nowrap"
                 style={{ fontSize: size }}
               >
                 <span className="text-light">{line1} </span>

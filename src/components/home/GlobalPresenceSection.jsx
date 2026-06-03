@@ -146,7 +146,7 @@ export default function GlobalPresenceSection() {
                     exit={{ opacity: 0, y: 8, scale: 0.96 }}
                     transition={{ duration: 0.35 }}
                     className="pointer-events-none absolute z-20 max-w-[16rem] rounded-2xl border border-saffron/30 bg-black/70 p-4 shadow-premium backdrop-blur"
-                    style={{ left: `${Math.min((tooltipCountry.x / 1200) * 100 + 4, 78)}%`, top: `${Math.max((tooltipCountry.y / 640) * 100 - 18, 8)}%` }}
+                    style={{ left: `clamp(4%, ${(tooltipCountry.x / 1200) * 100 + 2}%, 58%)`, top: `clamp(4%, ${(tooltipCountry.y / 640) * 100 - 18}%, 70%)` }}
                   >
                     <p className="text-xs font-bold uppercase tracking-[0.28em] text-saffron">{tooltipCountry.flag} {tooltipCountry.country}</p>
                     <p className="mt-2 text-sm leading-6 text-light/80">{tooltipCountry.description}</p>
